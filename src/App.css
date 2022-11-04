@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
+/*FONT IMPORT*/
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/*VARIABLES*/
+:root {
+  /*https://colorpalettes.net/color-palette-4014/ */
+  --background: #fffffe;
+  --mainBrown: #7c4937;
+  --lightBrown: #b98352;
+  --highlightYelllow: #e2be32;
+  --greyMagic: #655d5b;
+  --mainWhite: #fffffe;
+
+  /*NavBar*/
+  --mobileCategory: #7c4937;
+
+  /*Buttons*/
+  --btnAddToCart: #56700f;
+
+  /*Shadows*/
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+
+  /*Transitions*/
+  --allTransition: all 0.3s linear;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*GLOBAL SETTINGS*/
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  cursor: default;
+  font-weight: 400;
+  color: var(--white);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* NAVBAR*/
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  height: 10vh;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
+  padding: 0rem 1.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.navbarMenuIcon {
+  width: 1.5rem;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbarLogo {
+  width: 9rem;
+}
+
+.navbarFilterContainer {
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  list-style-type: none;
+  width: 100%;
+}
+
+.navbarFilterItem {
+  padding: 0.4rem 0;
+  width: 100%;
+  cursor: pointer;
+  padding-left: 1.5rem;
+  transition: var(--allTransition);
+}
+
+.navbarFilterItem:hover {
+  padding-left: 2rem;
+  transition: var(--allTransition);
+  background-color: var(--mobileCategory);
+  color: var(--mainWhite);
+}
+
+.navbarFilterBtn {
+  background-color: transparent;
+  border: none;
 }
