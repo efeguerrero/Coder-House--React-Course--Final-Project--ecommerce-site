@@ -24,6 +24,7 @@
 
   /*Transitions*/
   --allTransition: all 0.3s linear;
+  --shortTransition: all 0.1s linear;
 }
 
 /*GLOBAL SETTINGS*/
@@ -41,7 +42,7 @@
 /* NAVBAR*/
 
 .navbar {
-  height: 10vh;
+  height: 8vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -102,4 +103,74 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.cartIcon {
+  width: 2rem;
+  cursor: pointer;
+}
+
+/*NAVBAR MEDIA QUERY*/
+
+@media screen and (min-width: 768px) {
+  .navbarMenuIcon {
+    display: none;
+  }
+  .navbarFilterContainer {
+    width: auto;
+    height: auto;
+    gap: 1rem;
+    position: static;
+    box-shadow: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbarFilterItem {
+    padding: 0;
+    width: auto;
+    border-bottom: 1px solid transparent;
+    padding: 0.2rem 0;
+  }
+
+  .navbarFilterItem:hover {
+    padding-left: 0;
+    background-color: transparent;
+    color: black;
+    border-bottom: 1px solid black;
+  }
+  .navbarFilterBtn {
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar {
+    margin: 0 auto;
+    width: 85vw;
+  }
+
+  .navbarLogo {
+    width: 9rem;
+  }
+
+  .navbarFilterContainer {
+    gap: 2rem;
+    margin-right: auto;
+    padding-left: 2rem;
+    border-left: 1px solid black;
+    margin-left: 2rem;
+  }
+
+  .navbarFilterBtn {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .cartIcon {
+    width: 2.2rem;
+  }
 }
