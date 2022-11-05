@@ -19,8 +19,8 @@
   --btnAddToCart: #56700f;
 
   /*Shadows*/
-  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  --light-shadow: 0 5px 15px rgba(46, 46, 46, 0.1);
+  --dark-shadow: 0 5px 15px rgba(53, 52, 52, 0.25);
 
   /*Transitions*/
   --allTransition: all 0.3s linear;
@@ -52,6 +52,12 @@
 .navbarMenuIcon {
   width: 1.5rem;
   cursor: pointer;
+  transition: var(--allTransition);
+}
+
+.navbarMenuIcon-active {
+  transform: rotate(-90deg);
+  transition: var(--allTransition);
 }
 
 .navbarLogo {
@@ -59,19 +65,29 @@
 }
 
 .navbarFilterContainer {
+  height: 0;
+  overflow: hidden;
   position: absolute;
   top: 100%;
   left: 0%;
   list-style-type: none;
   width: 100%;
+  transition: var(--allTransition);
+  box-shadow: var(--dark-shadow);
+}
+
+.navbarFilterContainer-active {
+  height: 237px;
+  transition: var(--allTransition);
 }
 
 .navbarFilterItem {
-  padding: 0.4rem 0;
+  padding: 0.7rem 0.2rem;
   width: 100%;
   cursor: pointer;
   padding-left: 1.5rem;
   transition: var(--allTransition);
+  display: flex;
 }
 
 .navbarFilterItem:hover {
@@ -79,9 +95,11 @@
   transition: var(--allTransition);
   background-color: var(--mobileCategory);
   color: var(--mainWhite);
+  cursor: pointer;
 }
 
 .navbarFilterBtn {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
