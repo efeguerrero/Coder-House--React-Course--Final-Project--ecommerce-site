@@ -66,6 +66,7 @@
 }
 
 .navbarFilterContainer {
+  background: var(--mainWhite);
   height: 0;
   overflow: hidden;
   position: absolute;
@@ -114,7 +115,11 @@
 
 /*NAVBAR MEDIA QUERY*/
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 900px) {
+  .navbar {
+    padding: 0rem 2.5rem;
+  }
+
   .navbarMenuIcon {
     display: none;
   }
@@ -127,6 +132,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-right: auto;
+    padding-left: 2rem;
+    border-left: 1px solid black;
+    margin-left: 2rem;
   }
 
   .navbarFilterItem {
@@ -143,18 +152,14 @@
     border-bottom: 1px solid black;
   }
   .navbarFilterBtn {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1290px) {
   .navbar {
     margin: 0 auto;
     width: 85vw;
-  }
-
-  .navbarLogo {
-    width: 9rem;
   }
 
   .navbarFilterContainer {
@@ -168,9 +173,30 @@
   .navbarFilterBtn {
     font-size: 0.9rem;
     font-weight: 500;
+    letter-spacing: 1px;
   }
 
   .cartIcon {
     width: 2.2rem;
   }
+}
+
+/*END OF NAVBAR*/
+
+/*GREETING MSG*/
+
+.msgContainer {
+  width: 90vw;
+  height: 10rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.greetingMsg {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 7px;
 }
