@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-const ItemListContainer = ({ greeting }) => {
+//Child Imports
+import ItemList from './ItemList';
+import Loading from './Loading';
+
+//Product Catalog Import
+import { items } from '../mocks/item.mock';
+
+const ItemListContainer = () => {
+  const [products, setProducts] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    new Promise((resolve) =>
+      setTimeout(() => {
+        resolve(items);
+      }, 2000)
+    )
+      .then((data) => setProducts(data))
+      .then(() => setIsLoading(false));
+  }, []);
+
   return (
-    <div className="msgContainer">
-      <h2 className="greetingMsg">{greeting}</h2>
-    </div>
+    <section className="sectionCenter">
+      {isLoading ? <Loading /> : <ItemList products={products} />}
+    </section>
   );
 };
 

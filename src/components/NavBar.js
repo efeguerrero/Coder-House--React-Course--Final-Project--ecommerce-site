@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import CartWidget from './CartWidget';
-import menuIcon from '../imgs/icons/menuicon.svg';
-import mainLogo from '../imgs/logos/logostefanos.png';
+import menuIcon from '../assets/icons/menuicon.svg';
+import mainLogo from '../assets/logos/logostefanos.png';
 
 const NavBar = () => {
   const refFilterContainer = useRef(null);

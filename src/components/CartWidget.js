@@ -1,5 +1,5 @@
 import React from 'react';
-import cartIcon from '../imgs/icons/shopping_cart_black_24dp.svg';
+import cartIcon from '../assets/icons/shopping_cart_black_24dp.svg';
 
 function CartWidget() {
   return (
