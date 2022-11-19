@@ -11,12 +11,15 @@
   --highlightYelllow: #e2be32;
   --greyMagic: #655d5b;
   --mainWhite: #fffffe;
+  --spinner: #333333;
+  --spinnerLight: #d6d6d6; /*80%tint from spinner */
 
   /*Product Catalog*/
   --itemNameHover: #56700f;
 
   /*NavBar*/
   --mobileCategory: #7c4937;
+  --activeLink: #7c4937;
 
   /*Buttons*/
   --btnMainBack: #333333;
@@ -125,6 +128,10 @@
   cursor: pointer;
 }
 
+.activeLink {
+  background-color: var(--mobileCategory);
+}
+
 /*NAVBAR MEDIA QUERY*/
 
 @media screen and (min-width: 900px) {
@@ -160,18 +167,22 @@
   .navbarFilterItem:hover {
     padding-left: 0;
     background-color: transparent;
-    color: black;
-    border-bottom: 1px solid black;
+    color: var(--activeLink);
   }
   .navbarFilterBtn {
     font-size: 0.9rem;
+  }
+
+  .activeLink {
+    color: var(--activeLink);
+    background-color: transparent;
   }
 }
 
 @media screen and (min-width: 1290px) {
   .navbar {
     margin: 0 auto;
-    width: 85vw;
+    width: 95vw;
   }
 
   .navbarFilterContainer {
@@ -525,5 +536,59 @@
   .ItemDetailHomeBtn {
     position: absolute;
     top: -5.5rem;
+  }
+}
+
+/*************************************/
+/***********LOADING SPINNER**********/
+/***********************************/
+
+.sectionLoading {
+  width: 90vw;
+  height: 92vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+}
+.loader {
+  font-size: 10px;
+  position: relative;
+  /* text-indent: -9999em; */
+  border-top: 1.1em solid var(--spinnerLight);
+  border-right: 1.1em solid var(--spinnerLight);
+  border-bottom: 1.1em solid var(--spinnerLight);
+  border-left: 1.1em solid var(--spinner);
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 0.8s infinite linear;
+  animation: load8 0.8s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }

@@ -2,9 +2,9 @@ import React from 'react';
 
 const Loading = () => {
   return (
-    <div>
-      <h2>Loading Products...</h2>
-    </div>
+    <section className="sectionLoading">
+      <div class="loader"></div>
+    </section>
   );
 };
 
