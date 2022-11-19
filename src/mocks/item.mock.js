@@ -6,7 +6,8 @@ export const items = [
     img_src: './productImgs/item_1.jpeg',
     category: 'Alfombras',
     stock: 10,
-    description: 'Product Description',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nobis perspiciatis eius ratione voluptate nesciunt sit, illum rerum officiis.',
   },
   {
     id: 2,
@@ -15,7 +16,8 @@ export const items = [
     img_src: './productImgs/item_2.jpeg',
     category: 'Alfombras',
     stock: 12,
-    description: 'Product Description',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nobis perspiciatis eius ratione voluptate nesciunt sit, illum rerum officiis. Maiores laudantium odio neque voluptate mollitia facere ab, cumque consequuntur officiis.',
   },
   {
     id: 3,
@@ -24,7 +26,8 @@ export const items = [
     img_src: './productImgs/item_3.jpeg',
     category: 'Alfombras',
     stock: 2,
-    description: 'Product Description',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nobis perspiciatis eius ratione voluptate nesciunt sit, illum rerum officiis. Maiores laudantium odio neque voluptate mollitia facere ab, cumque consequuntur officiis.',
   },
   {
     id: 4,
@@ -33,7 +36,8 @@ export const items = [
     img_src: './productImgs/item_4.jpeg',
     category: 'Alfombras',
     stock: 5,
-    description: 'Product Description',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nobis perspiciatis eius ratione voluptate nesciunt sit, illum rerum officiis. Maiores laudantium odio neque voluptate mollitia facere ab, cumque consequuntur officiis.',
   },
   {
     id: 5,
@@ -42,7 +46,8 @@ export const items = [
     img_src: './productImgs/item_5.jpeg',
     category: 'Mochilas',
     stock: 5,
-    description: 'Product Description',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nobis perspiciatis eius ratione voluptate nesciunt sit, illum rerum officiis. Maiores laudantium odio neque voluptate mollitia facere ab, cumque consequuntur officiis.',
   },
   {
     id: 6,
@@ -51,7 +56,8 @@ export const items = [
     img_src: './productImgs/item_6.jpeg',
     category: 'Mochilas',
     stock: 7,
-    description: 'Product Description',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nobis perspiciatis eius ratione voluptate nesciunt sit, illum rerum officiis. Maiores laudantium odio neque voluptate mollitia facere ab, cumque consequuntur officiis.',
   },
   {
     id: 7,
@@ -60,7 +66,8 @@ export const items = [
     img_src: './productImgs/item_7.jpeg',
     category: 'Mochilas',
     stock: 5,
-    description: 'Product Description',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nobis perspiciatis eius ratione voluptate nesciunt sit, illum rerum officiis. Maiores laudantium odio neque voluptate mollitia facere ab, cumque consequuntur officiis.',
   },
   {
     id: 8,
@@ -69,7 +76,8 @@ export const items = [
     img_src: './productImgs/item_8.jpeg',
     category: 'Mochilas',
     stock: 9,
-    description: 'Product Description',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nobis perspiciatis eius ratione voluptate nesciunt sit, illum rerum officiis. Maiores laudantium odio neque voluptate mollitia facere ab, cumque consequuntur officiis.',
   },
   {
     id: 9,
@@ -78,7 +86,8 @@ export const items = [
     img_src: './productImgs/item_9.jpeg',
     category: 'Mochilas',
     stock: 20,
-    description: 'Product Description',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nobis perspiciatis eius ratione voluptate nesciunt sit, illum rerum officiis. Maiores laudantium odio neque voluptate mollitia facere ab, cumque consequuntur officiis.',
   },
   {
     id: 10,
@@ -87,7 +96,8 @@ export const items = [
     img_src: './productImgs/item_10.jpeg',
     category: 'Bolsos',
     stock: 4,
-    description: 'Product Description',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nobis perspiciatis eius ratione voluptate nesciunt sit, illum rerum officiis. Maiores laudantium odio neque voluptate mollitia facere ab, cumque consequuntur officiis.',
   },
   {
     id: 11,
@@ -96,7 +106,8 @@ export const items = [
     img_src: './productImgs/item_11.jpeg',
     category: 'Carteras',
     stock: 7,
-    description: 'Product Description',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nobis perspiciatis eius ratione voluptate nesciunt sit, illum rerum officiis. Maiores laudantium odio neque voluptate mollitia facere ab, cumque consequuntur officiis.',
   },
   {
     id: 12,
@@ -105,6 +116,7 @@ export const items = [
     img_src: './productImgs/item_12.jpeg',
     category: 'Sombreros',
     stock: 4,
-    description: 'Product Description',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nobis perspiciatis eius ratione voluptate nesciunt sit, illum rerum officiis. Maiores laudantium odio neque voluptate mollitia facere ab, cumque consequuntur officiis.',
   },
 ];
