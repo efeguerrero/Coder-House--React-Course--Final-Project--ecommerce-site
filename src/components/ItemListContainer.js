@@ -29,7 +29,6 @@ const ItemListContainer = () => {
             (item) => item.category === category
           );
           setProducts(filteredData);
-          console.log(filteredData);
         }
       })
 

@@ -6,6 +6,9 @@ import mainLogo from '../assets/logos/logostefanos.png';
 //React-Router Imports
 import { NavLink } from 'react-router-dom';
 
+//Product Catalog Import
+import { items } from '../mocks/item.mock';
+
 const NavBar = () => {
   const refFilterContainer = useRef(null);
   const refMenuIcon = useRef(null);
@@ -14,6 +17,12 @@ const NavBar = () => {
     refFilterContainer.current.classList.toggle('navbarFilterContainer-active');
     refMenuIcon.current.classList.toggle('navbarMenuIcon-active');
   };
+
+  //Obtain unique categories from product data set to later map over and render
+
+  const categoriesArr = items.map((item) => item.category);
+  const indivCategories = new Set(categoriesArr);
+  const categories = ['todo', ...indivCategories];
 
   return (
     <nav className="navbar">
@@ -29,58 +38,18 @@ const NavBar = () => {
       </NavLink>
       {/* NavBar Menu Links */}
       <ul className="navbarFilterContainer" ref={refFilterContainer}>
-        <NavLink
-          to="/category/todo"
-          className={({ isActive }) => (isActive ? 'activeLink' : '')}
-        >
-          <li className="navbarFilterItem">
-            <button className="navbarFilterBtn">Todo</button>
-          </li>
-        </NavLink>
-        <NavLink
-          to="/category/alfombras"
-          className={({ isActive }) => (isActive ? 'activeLink' : '')}
-        >
-          <li className="navbarFilterItem">
-            <button className="navbarFilterBtn">Alfombras</button>
-          </li>
-        </NavLink>
-
-        <NavLink
-          to="/category/mochilas"
-          className={({ isActive }) => (isActive ? 'activeLink' : '')}
-        >
-          <li className="navbarFilterItem">
-            <button className="navbarFilterBtn">Mochilas</button>
-          </li>
-        </NavLink>
-
-        <NavLink
-          to="/category/bolsos"
-          className={({ isActive }) => (isActive ? 'activeLink' : '')}
-        >
-          <li className="navbarFilterItem">
-            <button className="navbarFilterBtn">Bolsos</button>
-          </li>
-        </NavLink>
-
-        <NavLink
-          to="/category/carteras"
-          className={({ isActive }) => (isActive ? 'activeLink' : '')}
-        >
-          <li className="navbarFilterItem">
-            <button className="navbarFilterBtn">Carteras</button>
-          </li>
-        </NavLink>
-
-        <NavLink
-          to="/category/sombreros"
-          className={({ isActive }) => (isActive ? 'activeLink' : '')}
-        >
-          <li className="navbarFilterItem">
-            <button className="navbarFilterBtn">Sombreros</button>
-          </li>
-        </NavLink>
+        {categories.map((category) => {
+          return (
+            <NavLink
+              to={`/category/${category}`}
+              className={({ isActive }) => (isActive ? 'activeLink' : '')}
+            >
+              <li className="navbarFilterItem">
+                <button className="navbarFilterBtn">{category}</button>
+              </li>
+            </NavLink>
+          );
+        })}
       </ul>
       <CartWidget />
     </nav>
