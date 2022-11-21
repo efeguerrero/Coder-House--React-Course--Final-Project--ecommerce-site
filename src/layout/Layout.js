@@ -5,6 +5,7 @@ import { Outlet } from 'react-router-dom';
 
 //Components Imports
 import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 
 const Layout = () => {
   return (
@@ -12,6 +13,7 @@ const Layout = () => {
       <NavBar />
       {/* Outlet component displays depending on URL in browser and children defined in routes */}
       <Outlet />
+      <Footer />
     </section>
   );
 };

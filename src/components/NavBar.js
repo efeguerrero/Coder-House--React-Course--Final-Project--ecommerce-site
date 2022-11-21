@@ -44,7 +44,7 @@ const NavBar = () => {
               to={`/category/${category}`}
               className={({ isActive }) => (isActive ? 'activeLink' : '')}
             >
-              <li className="navbarFilterItem">
+              <li className="navbarFilterItem" onClick={handleMenuClick}>
                 <button className="navbarFilterBtn">{category}</button>
               </li>
             </NavLink>

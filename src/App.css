@@ -21,6 +21,10 @@
   --mobileCategory: #7c4937;
   --activeLink: #7c4937;
 
+  /*Footer*/
+  --footerBack: #333333;
+  --footerText: #fffffe;
+
   /*Buttons*/
   --btnMainBack: #333333;
   --btnMainText: #fffffe;
@@ -130,6 +134,7 @@ a {
   cursor: pointer;
   font-weight: 500;
   letter-spacing: 1px;
+  text-transform: capitalize;
 }
 
 .cartIcon {
@@ -214,6 +219,23 @@ a {
 }
 
 /*END OF NAVBAR*/
+
+/*FOOTER*/
+
+.footerContainer {
+  margin-top: 2rem;
+  height: 4vh;
+  width: 100%;
+  background-color: var(--footerBack);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerText {
+  font-size: 0.8rem;
+  color: var(--footerText);
+}
 
 /******************************************/
 /********** PRODUCTS DISPLAYING***********/

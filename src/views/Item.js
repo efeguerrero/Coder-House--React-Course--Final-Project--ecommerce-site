@@ -1,9 +1,7 @@
 import React from 'react';
-import ItemDetailContainer from '../components/ItemDetailContainer';
 
 //Component Imports
-import itemDetailContainer from '../components/ItemDetailContainer';
-import NavBar from '../components/NavBar';
+import ItemDetailContainer from '../components/ItemDetailContainer';
 
 const Item = () => {
   return <ItemDetailContainer />;
