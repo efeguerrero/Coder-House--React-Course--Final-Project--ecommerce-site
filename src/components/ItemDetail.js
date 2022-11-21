@@ -13,8 +13,7 @@ const ItemDetail = ({ item }) => {
   return (
     <>
       <div className="itemDetailContainer">
-        {/* Link back to products to last category filtered */}
-        <Link to={`/category/${category}`}>
+        <Link className="ItemDetailHomeBtnWrapper" to="/">
           <button className="ItemDetailHomeBtn">Volver a Productos</button>
         </Link>
         <img className="itemDetailImg" src={img_src} alt={name} />
