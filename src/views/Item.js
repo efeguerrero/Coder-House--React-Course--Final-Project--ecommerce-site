@@ -1,11 +1,12 @@
 import React from 'react';
+import ItemDetailContainer from '../components/ItemDetailContainer';
+
+//Component Imports
+import itemDetailContainer from '../components/ItemDetailContainer';
+import NavBar from '../components/NavBar';
 
 const Item = () => {
-  return (
-    <div>
-      <h2>Item</h2>
-    </div>
-  );
+  return <ItemDetailContainer />;
 };
 
 export default Item;

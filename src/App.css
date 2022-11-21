@@ -15,7 +15,7 @@
   --spinnerLight: #d6d6d6; /*80%tint from spinner */
 
   /*Product Catalog*/
-  --itemNameHover: #56700f;
+  --itemNameHover: #333333;
 
   /*NavBar*/
   --mobileCategory: #7c4937;
@@ -52,6 +52,13 @@
 .sectionCenter {
   max-width: 90vw;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* NAVBAR*/
@@ -78,6 +85,7 @@
 
 .navbarLogo {
   width: 9rem;
+  cursor: pointer;
 }
 
 .navbarFilterContainer {
@@ -91,6 +99,7 @@
   width: 100%;
   transition: var(--allTransition);
   box-shadow: var(--dark-shadow);
+  z-index: 1;
 }
 
 .navbarFilterContainer-active {
@@ -129,7 +138,7 @@
 }
 
 .activeLink {
-  background-color: var(--mobileCategory);
+  background-color: var(--activeLink);
 }
 
 /*NAVBAR MEDIA QUERY*/
@@ -367,6 +376,7 @@
 .itemDetailCategory {
   font-size: 0.9rem;
   margin-bottom: 0.4rem;
+  text-transform: capitalize;
 }
 
 .itemDetailStrong {
@@ -465,6 +475,7 @@
     display: grid;
     grid-template-columns: 200px 1fr;
     margin-bottom: 0.4rem;
+    text-transform: capitalize;
   }
 
   .cartBtnIcon {

@@ -1,6 +1,11 @@
 import React from 'react';
+
+//Assets Import
 import cartAdd from '../assets/icons/cartAdd.svg';
 import cartRemove from '../assets/icons/cartRemove.svg';
+
+//React-router-dom Imports
+import { Link } from 'react-router-dom';
 
 const ItemDetail = ({ item }) => {
   const { name, id, stock, category, price, img_src, description } = item;
@@ -8,7 +13,10 @@ const ItemDetail = ({ item }) => {
   return (
     <>
       <div className="itemDetailContainer">
-        <button className="ItemDetailHomeBtn">Volver a Productos</button>
+        {/* Link back to products to last category filtered */}
+        <Link to={`/category/${category}`}>
+          <button className="ItemDetailHomeBtn">Volver a Productos</button>
+        </Link>
         <img className="itemDetailImg" src={img_src} alt={name} />
         <div className="itemDetailInfo">
           <h2 className="itemDetailName">{name}</h2>

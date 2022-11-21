@@ -22,7 +22,7 @@ const ItemListContainer = () => {
       }, 2000)
     )
       .then((data) => {
-        if (category === 'todo') {
+        if (category === 'todo' || !category) {
           setProducts(data);
         } else {
           const filteredData = data.filter(

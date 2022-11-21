@@ -24,56 +24,63 @@ const NavBar = () => {
         className="navbarMenuIcon"
         ref={refMenuIcon}
       />
-      <img src={mainLogo} alt="" className="navbarLogo" />
+      <NavLink to="/">
+        <img src={mainLogo} alt="" className="navbarLogo" />
+      </NavLink>
+      {/* NavBar Menu Links */}
       <ul className="navbarFilterContainer" ref={refFilterContainer}>
-        <li className="navbarFilterItem">
-          <NavLink
-            to="/category/todo"
-            className={({ isActive }) => (isActive ? 'activeLink' : '')}
-          >
+        <NavLink
+          to="/category/todo"
+          className={({ isActive }) => (isActive ? 'activeLink' : '')}
+        >
+          <li className="navbarFilterItem">
             <button className="navbarFilterBtn">Todo</button>
-          </NavLink>
-        </li>
-        <li className="navbarFilterItem">
-          <NavLink
-            to="/category/alfombras"
-            className={({ isActive }) => (isActive ? 'activeLink' : '')}
-          >
+          </li>
+        </NavLink>
+        <NavLink
+          to="/category/alfombras"
+          className={({ isActive }) => (isActive ? 'activeLink' : '')}
+        >
+          <li className="navbarFilterItem">
             <button className="navbarFilterBtn">Alfombras</button>
-          </NavLink>
-        </li>
-        <li className="navbarFilterItem">
-          <NavLink
-            to="/category/mochilas"
-            className={({ isActive }) => (isActive ? 'activeLink' : '')}
-          >
+          </li>
+        </NavLink>
+
+        <NavLink
+          to="/category/mochilas"
+          className={({ isActive }) => (isActive ? 'activeLink' : '')}
+        >
+          <li className="navbarFilterItem">
             <button className="navbarFilterBtn">Mochilas</button>
-          </NavLink>
-        </li>
-        <li className="navbarFilterItem">
-          <NavLink
-            to="/category/bolsos"
-            className={({ isActive }) => (isActive ? 'activeLink' : '')}
-          >
+          </li>
+        </NavLink>
+
+        <NavLink
+          to="/category/bolsos"
+          className={({ isActive }) => (isActive ? 'activeLink' : '')}
+        >
+          <li className="navbarFilterItem">
             <button className="navbarFilterBtn">Bolsos</button>
-          </NavLink>
-        </li>
-        <li className="navbarFilterItem">
-          <NavLink
-            to="/category/carteras"
-            className={({ isActive }) => (isActive ? 'activeLink' : '')}
-          >
+          </li>
+        </NavLink>
+
+        <NavLink
+          to="/category/carteras"
+          className={({ isActive }) => (isActive ? 'activeLink' : '')}
+        >
+          <li className="navbarFilterItem">
             <button className="navbarFilterBtn">Carteras</button>
-          </NavLink>
-        </li>
-        <li className="navbarFilterItem">
-          <NavLink
-            to="/category/sombreros"
-            className={({ isActive }) => (isActive ? 'activeLink' : '')}
-          >
+          </li>
+        </NavLink>
+
+        <NavLink
+          to="/category/sombreros"
+          className={({ isActive }) => (isActive ? 'activeLink' : '')}
+        >
+          <li className="navbarFilterItem">
             <button className="navbarFilterBtn">Sombreros</button>
-          </NavLink>
-        </li>
+          </li>
+        </NavLink>
       </ul>
       <CartWidget />
     </nav>
