@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <>
       <div className="footerContainer">
-        <h2 className="footerText">&copy; Stefanos Deco</h2>;
+        <h2 className="footerText">&copy; Stefanos Deco</h2>
       </div>
     </>
   );
