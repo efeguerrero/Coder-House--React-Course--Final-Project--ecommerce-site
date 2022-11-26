@@ -7,6 +7,9 @@ import cartRemove from '../assets/icons/cartRemove.svg';
 //React-router-dom Imports
 import { Link } from 'react-router-dom';
 
+//Children Imports
+import ItemCount from './ItemCount';
+
 const ItemDetail = ({ item }) => {
   const { name, id, stock, category, price, img_src, description } = item;
 
@@ -22,23 +25,7 @@ const ItemDetail = ({ item }) => {
           <h2 className="itemDetailPrice">${price.toLocaleString('es-AR')}</h2>
           <p className="itemDetailDescrip">{description}</p>
           <div className="itemDetailCart">
-            <div className="itemDetailCartMenu">
-              <button className="cartBtn">
-                <img
-                  src={cartRemove}
-                  alt="Cart Remove Button"
-                  className="cartBtnIcon"
-                />
-              </button>
-              <h3 className="ItemDetailCartCount">2</h3>
-              <button className="cartBtn">
-                <img
-                  src={cartAdd}
-                  alt="Cart Add Button"
-                  className="cartBtnIcon"
-                />
-              </button>
-            </div>
+            <ItemCount />
             <button className="cartAddBtn">Agregar al carrito</button>
           </div>
           <h3 className="itemDetailStock">
