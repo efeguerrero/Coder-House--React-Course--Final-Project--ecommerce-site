@@ -30,6 +30,10 @@ const ItemDetail = ({ item }) => {
     setCount(1);
   };
 
+  const handleCheckOut = () => {
+    console.log('hello');
+  };
+
   return (
     <>
       <div className="itemDetailContainer">
@@ -49,6 +53,9 @@ const ItemDetail = ({ item }) => {
               disabled={currStock === 0 ? true : false}
             >
               {currStock === 0 ? 'Sin Stock' : 'Agregar al carrito'}
+            </button>
+            <button className="checkoutBtn" onClick={handleCheckOut}>
+              finalizar Compra
             </button>
           </div>
           <h3 className="itemDetailStock">

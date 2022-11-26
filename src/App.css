@@ -6,9 +6,7 @@
 :root {
   /*https://colorpalettes.net/color-palette-4014/ */
   --background: #fffffe;
-  --mainBrown: #7c4937;
-  --lightBrown: #b98352;
-  --highlightYelllow: #e2be32;
+  --mainBrown: #aa5042;
   --greyMagic: #655d5b;
   --mainWhite: #fffffe;
   --spinner: #333333;
@@ -19,12 +17,12 @@
 
   /*Item CTA*/
   --imgCTABack: #fffffe;
-  --imgCTAText: 333333;
+  --imgCTAText: #333333;
   --imgCTABorder: #fffffe;
 
   /*NavBar*/
-  --mobileCategory: #7c4937;
-  --activeLink: #7c4937;
+  --mobileCategory: #aa5042;
+  --activeLink: #aa5042;
 
   /*Footer*/
   --footerBack: #333333;
@@ -38,6 +36,11 @@
   --btnHoverBorder: #5c5c5c;
   --inactiveBtnBack: #5c5c5c;
   --inactiveBtnText: #fffffe;
+  --btnAltBack: #619b8a;
+  --btnAltText: #fffffe;
+  --btnAltBorder: #619b8a;
+  --btnAltHoverBack: #71a596; /*10% tint from AltBack */
+  --btnAltHoverBorder: #71a596; /*10% tint from AltBack */
 
   /*Shadows*/
   --light-shadow: 0 5px 15px rgba(46, 46, 46, 0.1);
@@ -535,6 +538,28 @@ a {
   cursor: not-allowed;
 }
 
+.checkoutBtn {
+  margin-top: 1rem;
+  min-width: 12rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 0.7rem 1rem;
+  background-color: var(--btnAltBack);
+  border: 1px solid var(--btnAltBack);
+  color: var(--btnAltText);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: var(--allTransition);
+}
+
+.checkoutBtn:hover {
+  background-color: var(--btnAltHoverBack);
+  border: 1px solid var(--btnAltHoverBorder);
+  transition: var(--allTransition);
+}
+
 /*Media Queries*/
 
 @media screen and (min-width: 768px) {
@@ -580,9 +605,12 @@ a {
     margin: 0 1.5rem;
   }
 
-  .cartAddBtn {
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
+  .cartAddBtn,
+  .checkoutBtn,
+  .inactivecartAddBtn {
+    width: 15rem;
+    font-size: 0.85rem;
+    padding: 0.8rem 1rem;
   }
 }
 
@@ -631,10 +659,11 @@ a {
     margin: 0 2rem;
   }
 
-  .cartAddBtn {
-    font-size: 0.9rem;
-    padding: 0.6rem 1.2rem;
-    margin-bottom: 1.5rem;
+  .cartAddBtn,
+  .checkoutBtn,
+  .inactivecartAddBtn {
+    font-size: 0.85rem;
+    padding: 0.8rem 1.2rem;
   }
 
   .ItemDetailHomeBtnWrapper {
