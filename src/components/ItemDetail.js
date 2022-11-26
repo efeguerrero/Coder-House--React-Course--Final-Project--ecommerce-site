@@ -1,8 +1,4 @@
-import React from 'react';
-
-//Assets Import
-import cartAdd from '../assets/icons/cartAdd.svg';
-import cartRemove from '../assets/icons/cartRemove.svg';
+import React, { useState } from 'react';
 
 //React-router-dom Imports
 import { Link } from 'react-router-dom';
@@ -12,6 +8,27 @@ import ItemCount from './ItemCount';
 
 const ItemDetail = ({ item }) => {
   const { name, id, stock, category, price, img_src, description } = item;
+
+  //Component States
+  const [count, setCount] = useState(1);
+  const [currStock, setCurrStock] = useState(stock);
+
+  //Component Functions
+
+  const handleCount = (operation) => {
+    if (operation === 'add' && count < currStock) {
+      setCount(count + 1);
+    }
+    if (operation === 'remove' && count > 1) {
+      setCount(count - 1);
+    }
+  };
+
+  const handleCartAdd = () => {
+    const newStock = currStock - count;
+    setCurrStock(newStock);
+    setCount(1);
+  };
 
   return (
     <>
@@ -25,12 +42,18 @@ const ItemDetail = ({ item }) => {
           <h2 className="itemDetailPrice">${price.toLocaleString('es-AR')}</h2>
           <p className="itemDetailDescrip">{description}</p>
           <div className="itemDetailCart">
-            <ItemCount />
-            <button className="cartAddBtn">Agregar al carrito</button>
+            <ItemCount count={count} handleCount={handleCount} />
+            <button
+              className={currStock === 0 ? 'inactivecartAddBtn' : 'cartAddBtn'}
+              onClick={handleCartAdd}
+              disabled={currStock === 0 ? true : false}
+            >
+              {currStock === 0 ? 'Sin Stock' : 'Agregar al carrito'}
+            </button>
           </div>
           <h3 className="itemDetailStock">
             <span className="itemDetailStrong">Stock:</span>
-            {stock}
+            {currStock}
           </h3>
           <h3 className="itemDetailId">
             <span className="itemDetailStrong">Código de Producto:</span>

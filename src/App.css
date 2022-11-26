@@ -36,6 +36,8 @@
   --btnHoverBack: #5c5c5c; /*10 tint from MainBack */
   --btnHoverText: #fffffe;
   --btnHoverBorder: #5c5c5c;
+  --inactiveBtnBack: #5c5c5c;
+  --inactiveBtnText: #fffffe;
 
   /*Shadows*/
   --light-shadow: 0 5px 15px rgba(46, 46, 46, 0.1);
@@ -498,6 +500,7 @@ a {
 }
 
 .cartAddBtn {
+  min-width: 12rem;
   font-size: 0.7rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -516,6 +519,20 @@ a {
   color: var(--btnHoverText);
   border: 1px solid var(--btnHoverBorder);
   transition: var(--allTransition);
+}
+
+.inactivecartAddBtn {
+  min-width: 12rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 0.7rem 1rem;
+  background-color: var(--inactiveBtnBack);
+  color: var(--inactiveBtnText);
+  border: 1px solid var(--inactiveBtnBack);
+  border-radius: 0.3rem;
+  cursor: not-allowed;
 }
 
 /*Media Queries*/
