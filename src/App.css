@@ -41,6 +41,7 @@
   --btnAltBorder: #619b8a;
   --btnAltHoverBack: #71a596; /*10% tint from AltBack */
   --btnAltHoverBorder: #71a596; /*10% tint from AltBack */
+  --cartBtnBorder: #333333;
 
   /*Shadows*/
   --light-shadow: 0 5px 15px rgba(46, 46, 46, 0.1);
@@ -487,7 +488,7 @@ a {
   justify-content: center;
   align-items: center;
   border-radius: 0.3rem;
-  border: 1px solid black;
+  border: 1px solid var(--cartBtnBorder);
   background-color: transparent;
 }
 
@@ -792,4 +793,99 @@ a {
     color: var(--btnHoverText);
     transform: var(--allTransition);
   }
+}
+
+/*************************************/
+/**********CHECK OUT CART************/
+/***********************************/
+
+.cartListContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: 1px solid var(--btnAltBack); */
+  gap: 4rem;
+}
+
+.cartItemContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 0.7rem;
+}
+
+.cartItemImg {
+  width: 10rem;
+  height: auto;
+}
+
+.cartItemInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.cartIteminfoHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  gap: 3rem;
+}
+
+.cartItemName {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.cartItemRemove {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.cartItemPrice {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 1.8rem;
+}
+
+.cartItemCount {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.cartItemQuantity {
+  font-size: 0.9rem;
+}
+
+.cartItemBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0.1rem;
+  border: 1px solid var(--cartBtnBorder);
+  border-radius: 0.3rem;
+}
+
+.cartItemBtnRemoveIcon,
+.cartItemBtnAddIcon {
+  width: 1rem;
+  cursor: pointer;
+}
+
+.cartItemSubtotal {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.cartItemSubtotalStrong {
+  font-weight: 600;
 }

@@ -8,6 +8,7 @@ const CartContextProvider = ({ children }) => {
   //Context State
   const [cart, setCart] = useState([]);
 
+  //Context Functiosna & Logic
   const addItem = (id, name, price, img_src, count) => {
     //If item is in cart we map over Array and update quantity of item that was updated, leaving the rest as they were. If not in cart then we added it to the end of the array
     if (isInCart(id)) {
