@@ -7,10 +7,15 @@ import reportWebVitals from './reportWebVitals';
 import { router } from './router/Index';
 import { RouterProvider } from 'react-router-dom';
 
+//Context Imports
+import CartContextProvider from './context/CartContex';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <CartContextProvider>
+      <RouterProvider router={router} />
+    </CartContextProvider>
   </React.StrictMode>
 );
 

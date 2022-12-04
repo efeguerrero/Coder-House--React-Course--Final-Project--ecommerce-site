@@ -4,10 +4,11 @@ import { createBrowserRouter } from 'react-router-dom';
 import Layout from '../layout/Layout';
 
 //Views Import
+import App from '../App';
 import Category from '../views/Category';
 import Item from '../views/Item';
+import Cart from '../views/Cart';
 import NotFound from '../views/NotFound';
-import App from '../App';
 
 //Routes definition
 //Category and Item will have dynamic URL to later show specific info with useParams Hook
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
       {
         path: 'item/:id',
         element: <Item />,
+      },
+      {
+        path: '/cart',
+        element: <Cart />,
       },
     ],
   },
