@@ -4,7 +4,7 @@ import React from 'react';
 import cartAdd from '../assets/icons/cartAdd.svg';
 import cartRemove from '../assets/icons/cartRemove.svg';
 
-const CartItem = ({ cartItem, removeItem, clearCart }) => {
+const CartItem = ({ cartItem, removeItem }) => {
   const { id, name, quantity, price, img_src } = cartItem;
 
   return (

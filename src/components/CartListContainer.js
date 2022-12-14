@@ -20,6 +20,9 @@ const CartListContainer = () => {
           />
         ))}
       </div>
+      <button className="clearCartBtn" onClick={() => clearCart()}>
+        Limpiar Carrito
+      </button>
     </>
   );
 };

@@ -25,6 +25,7 @@ const CartSummary = () => {
           <h3 className="cartSummaryAmount">${cartTotal() + costoEnvio}</h3>
         </div>
         <button className="checkoutBtn">Finalizar Compra</button>
+        <button className="toProductsBtn">Seguir Comprando</button>
       </div>
     </>
   );

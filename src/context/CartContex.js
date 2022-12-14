@@ -48,9 +48,21 @@ const CartContextProvider = ({ children }) => {
     return total;
   };
 
+  const isCartEmpty = () => {
+    return Boolean(cart.length === 0);
+  };
+
   return (
     <CartContext.Provider
-      value={{ cart, addItem, removeItem, clearCart, isInCart, cartTotal }}
+      value={{
+        cart,
+        addItem,
+        removeItem,
+        clearCart,
+        isInCart,
+        cartTotal,
+        isCartEmpty,
+      }}
     >
       {children}
     </CartContext.Provider>
