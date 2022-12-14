@@ -7,9 +7,9 @@ import CartSummary from './CartSummary';
 const CartContainer = () => {
   return (
     <>
-      <section className="sectionCenter">
+      <section className="sectionCenter cartContainer">
+        <CartSummary />
         <CartListContainer />
-        {/* <CartSummary /> */}
       </section>
     </>
   );

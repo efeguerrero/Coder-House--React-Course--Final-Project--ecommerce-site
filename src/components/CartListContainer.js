@@ -7,15 +7,19 @@ import CartItem from './CartItem';
 import { useCartContext } from '../context/CartContex';
 
 const CartListContainer = () => {
-  const { cart } = useCartContext();
+  const { cart, removeItem, clearCart } = useCartContext();
 
   return (
     <>
-      <section className="cartListContainer">
+      <div className="cartListContainer">
         {cart.map((cartItem) => (
-          <CartItem key={cartItem.id} cartItem={cartItem} />
+          <CartItem
+            key={cartItem.id}
+            cartItem={cartItem}
+            removeItem={removeItem}
+          />
         ))}
-      </section>
+      </div>
     </>
   );
 };

@@ -64,7 +64,7 @@ const ItemDetail = ({ item }) => {
             >
               {currStock === 0 ? 'Sin Stock' : 'Agregar al carrito'}
             </button>
-            <button className="checkoutBtn" onClick={handleCheckOut}>
+            <button className="toCartBtn" onClick={handleCheckOut}>
               ir al carrito
             </button>
           </div>

@@ -539,7 +539,7 @@ a {
   cursor: not-allowed;
 }
 
-.checkoutBtn {
+.toCartBtn {
   margin-top: 1rem;
   min-width: 12rem;
   font-size: 0.7rem;
@@ -555,7 +555,7 @@ a {
   transition: var(--allTransition);
 }
 
-.checkoutBtn:hover {
+.toCartBtn:hover {
   background-color: var(--btnAltHoverBack);
   border: 1px solid var(--btnAltHoverBorder);
   transition: var(--allTransition);
@@ -607,7 +607,7 @@ a {
   }
 
   .cartAddBtn,
-  .checkoutBtn,
+  .toCartBtn,
   .inactivecartAddBtn {
     width: 15rem;
     font-size: 0.85rem;
@@ -661,7 +661,7 @@ a {
   }
 
   .cartAddBtn,
-  .checkoutBtn,
+  .toCartBtn,
   .inactivecartAddBtn {
     font-size: 0.85rem;
     padding: 0.8rem 1.2rem;
@@ -796,8 +796,13 @@ a {
 }
 
 /*************************************/
-/**********CHECK OUT CART************/
+/**********CART**********************/
 /***********************************/
+
+.cartContainer {
+  display: flex;
+  flex-direction: column;
+}
 
 .cartListContainer {
   display: flex;
@@ -823,27 +828,10 @@ a {
   flex-direction: column;
 }
 
-.cartIteminfoHeader {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-  gap: 3rem;
-}
-
 .cartItemName {
   font-size: 1rem;
   letter-spacing: 1px;
   font-weight: 600;
-}
-
-.cartItemRemove {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  font-size: 1rem;
-  letter-spacing: 1px;
-  font-weight: 400;
 }
 
 .cartItemPrice {
@@ -888,4 +876,59 @@ a {
 
 .cartItemSubtotalStrong {
   font-weight: 600;
+}
+
+.cartItemRemove {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border: none;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin-top: auto;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.cartSummary {
+  padding: 1rem;
+  margin: 2rem 0;
+}
+
+.cartSummaryTitle {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.cartSummaryInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartSummarySubtitle,
+.cartSummaryAmount {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.cartSummaryTotal {
+  margin-top: 1.5rem;
+}
+
+.checkoutBtn {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 0.7rem 1rem;
+  background-color: var(--btnAltBack);
+  border: 1px solid var(--btnAltBack);
+  color: var(--btnMainText);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: var(--allTransition);
+  text-align: center;
+  margin: 1.5rem auto;
 }

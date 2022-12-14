@@ -21,7 +21,6 @@ const CartContextProvider = ({ children }) => {
       });
       setCart(updatedCart);
     } else {
-      console.log('not in cart so adding');
       const newItem = { id, name, quantity: count, price, img_src };
       setCart([...cart, newItem]);
     }
@@ -41,9 +40,17 @@ const CartContextProvider = ({ children }) => {
     //short version to avoid if --> true, else--->false
   };
 
+  const cartTotal = () => {
+    const total = cart.reduce((acc, currItem) => {
+      acc += currItem.quantity * currItem.price;
+      return acc;
+    }, 0);
+    return total;
+  };
+
   return (
     <CartContext.Provider
-      value={{ cart, addItem, removeItem, clearCart, isInCart }}
+      value={{ cart, addItem, removeItem, clearCart, isInCart, cartTotal }}
     >
       {children}
     </CartContext.Provider>
