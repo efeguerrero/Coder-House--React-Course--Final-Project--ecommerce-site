@@ -60,6 +60,12 @@ const CartContextProvider = ({ children }) => {
     return total;
   };
 
+  const cartItemCount = (id) => {
+    const item = cart.find((item) => item.id === id);
+    const count = (item && item.quantity) || 0;
+    return count;
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -71,6 +77,7 @@ const CartContextProvider = ({ children }) => {
         cartTotal,
         isCartEmpty,
         cartTotalItems,
+        cartItemCount,
       }}
     >
       {children}

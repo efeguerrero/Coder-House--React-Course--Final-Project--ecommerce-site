@@ -479,7 +479,8 @@ a {
 
 .itemDetailStock,
 .itemDetailId,
-.itemDetailCategory {
+.itemDetailCategory,
+.itemsInCart {
   font-size: 0.9rem;
   margin-bottom: 0.4rem;
   text-transform: capitalize;
@@ -613,7 +614,8 @@ a {
 
   .itemDetailStock,
   .itemDetailId,
-  .itemDetailCategory {
+  .itemDetailCategory,
+  .itemsInCart {
     font-size: 1rem;
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -664,7 +666,8 @@ a {
 
   .itemDetailStock,
   .itemDetailId,
-  .itemDetailCategory {
+  .itemDetailCategory,
+  .itemsInCar {
     font-size: 1rem;
     display: grid;
     grid-template-columns: 250px 1fr;

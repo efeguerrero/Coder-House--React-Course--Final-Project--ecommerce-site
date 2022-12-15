@@ -12,15 +12,18 @@ import { useCartContext } from '../context/CartContex';
 const ItemDetail = ({ item }) => {
   const { name, id, stock, category, price, img_src, description } = item;
 
+  //Context Imports
+  const { addItem, cartItemCount } = useCartContext();
+
   //Component States
   const [count, setCount] = useState(1);
-  const [currStock, setCurrStock] = useState(stock);
+
+  //When we set the currStock of our product we take into account if we have items for this in our cart and substract them. We do this to avoid the bug where I could add maximum items of a product to cart, refresh the page and have my stock available to add again. This would cause for a customer to buy more than the existing stock.
+
+  const [currStock, setCurrStock] = useState(stock - cartItemCount(id));
 
   //Naviget Method
   const navigate = useNavigate();
-
-  //Context Imports
-  const { addItem } = useCartContext();
 
   //Component Functions
 
@@ -57,6 +60,7 @@ const ItemDetail = ({ item }) => {
           <p className="itemDetailDescrip">{description}</p>
           <div className="itemDetailCart">
             <ItemCount count={count} handleCount={handleCount} />
+
             <button
               className={currStock === 0 ? 'inactivecartAddBtn' : 'cartAddBtn'}
               onClick={() => handleCartAdd(id, name, price, img_src, count)}
@@ -68,16 +72,20 @@ const ItemDetail = ({ item }) => {
               ir al carrito
             </button>
           </div>
+          <h3 className="itemsInCart">
+            <span className="itemDetailStrong"> Unidades en Carrito: </span>{' '}
+            {cartItemCount(id)}
+          </h3>
           <h3 className="itemDetailStock">
-            <span className="itemDetailStrong">Stock:</span>
+            <span className="itemDetailStrong">Stock Disponible: </span>
             {currStock}
           </h3>
           <h3 className="itemDetailId">
-            <span className="itemDetailStrong">Código de Producto:</span>
+            <span className="itemDetailStrong">Código de Producto: </span>
             {id}
           </h3>
           <h3 className="itemDetailCategory">
-            <span className="itemDetailStrong">Categoría:</span>
+            <span className="itemDetailStrong">Categoría: </span>
             {category}
           </h3>
         </div>
