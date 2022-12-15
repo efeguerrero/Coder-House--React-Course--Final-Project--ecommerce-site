@@ -52,6 +52,14 @@ const CartContextProvider = ({ children }) => {
     return Boolean(cart.length === 0);
   };
 
+  const cartTotalItems = () => {
+    const total = cart.reduce((acc, currItem) => {
+      acc += currItem.quantity;
+      return acc;
+    }, 0);
+    return total;
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -62,6 +70,7 @@ const CartContextProvider = ({ children }) => {
         isInCart,
         cartTotal,
         isCartEmpty,
+        cartTotalItems,
       }}
     >
       {children}

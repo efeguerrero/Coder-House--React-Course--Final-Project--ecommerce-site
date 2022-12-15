@@ -3,6 +3,9 @@ import React from 'react';
 //Context Imports
 import { useCartContext } from '../context/CartContex';
 
+//React-router-dom Imports
+import { Link } from 'react-router-dom';
+
 const CartSummary = () => {
   const { cartTotal } = useCartContext();
 
@@ -25,7 +28,9 @@ const CartSummary = () => {
           <h3 className="cartSummaryAmount">${cartTotal() + costoEnvio}</h3>
         </div>
         <button className="checkoutBtn">Finalizar Compra</button>
-        <button className="toProductsBtn">Seguir Comprando</button>
+        <Link to="/" className="toProductsBtn">
+          Seguir Comprando
+        </Link>
       </div>
     </>
   );

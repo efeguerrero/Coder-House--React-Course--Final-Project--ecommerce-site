@@ -7,6 +7,9 @@ import CartSummary from './CartSummary';
 //Context Imports
 import { useCartContext } from '../context/CartContex';
 
+//React-router-dom Imports
+import { Link } from 'react-router-dom';
+
 const CartContainer = () => {
   const { isCartEmpty } = useCartContext();
 
@@ -15,7 +18,9 @@ const CartContainer = () => {
       <section className="sectionCenter">
         <div className="emptyCartContainer">
           <h2 className="emptyCartMsg">Tu carrito está vació!</h2>
-          <button className="emptyCartBackBtn">Seguir Comprando</button>
+          <Link to="/" className="emptyCartBackBtn">
+            Seguir Comprando
+          </Link>
         </div>
       </section>
     );

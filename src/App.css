@@ -155,9 +155,33 @@ a {
   text-transform: capitalize;
 }
 
+.navBarCart {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .cartIcon {
-  width: 2rem;
+  width: 2.1rem;
   cursor: pointer;
+}
+
+.cartWidgetItemCount {
+  background-color: var(--btnAltBack);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--btnAltText);
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 600;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  cursor: pointer;
+  top: -40%;
+  right: -25%;
 }
 
 .activeLink {
@@ -906,6 +930,7 @@ a {
   margin-top: auto;
   margin-left: auto;
   cursor: pointer;
+  background-color: transparent;
 }
 
 .cartSummary {
