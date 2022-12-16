@@ -18,7 +18,7 @@ const ItemDetail = ({ item }) => {
   //Component States
   const [count, setCount] = useState(1);
 
-  //When we set the currStock of our product we take into account if we have items for this in our cart and substract them. We do this to avoid the bug where I could add maximum items of a product to cart, refresh the page and have my stock available to add again. This would cause for a customer to buy more than the existing stock.
+  //When we set the currStock of our product we take into account if we have items for this in our cart and substract them. We do this to avoid the bug where I could add maximum stock of items of a product to cart, navigate away and comeback to the page and have my stock available to add again. This would cause for a customer to buy more than the existing stock.
 
   const [currStock, setCurrStock] = useState(stock - cartItemCount(id));
 
