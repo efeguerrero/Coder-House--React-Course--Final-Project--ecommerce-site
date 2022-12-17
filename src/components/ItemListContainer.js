@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from 'react';
-
 //Child Imports
 import ItemList from './ItemList';
 import Loading from './Loading';

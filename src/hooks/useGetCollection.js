@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 //FireStore Imports
 import {
   collection,
-  doc,
   getDocs,
   getFirestore,
   query,
@@ -25,6 +24,7 @@ const useGetCollection = () => {
   useEffect(() => {
     //No filter Query to bring all products if no category is selected or "todo"
     if (category === 'todo' || !category) {
+      //create collection ref
       const itemsCollection = collection(db, 'items');
       getDocs(itemsCollection).then((data) =>
         setProducts(data.docs.map((doc) => ({ id: doc.id, ...doc.data() })))

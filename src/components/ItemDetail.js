@@ -9,8 +9,13 @@ import ItemCount from './ItemCount';
 //Context Imports
 import { useCartContext } from '../context/CartContex';
 
+//Custom Hook import to access Firebase Image Storage
+import useGetItemImg from '../hooks/useGetItemImg';
+
 const ItemDetail = ({ item }) => {
   const { name, id, stock, category, price, img_src, description } = item;
+
+  const itemImg = useGetItemImg(img_src);
 
   //Context Imports
   const { addItem, cartItemCount } = useCartContext();
@@ -53,7 +58,7 @@ const ItemDetail = ({ item }) => {
         <Link className="ItemDetailHomeBtnWrapper" to="/">
           <button className="ItemDetailHomeBtn">Volver a Productos</button>
         </Link>
-        <img className="itemDetailImg" src={img_src} alt={name} />
+        <img className="itemDetailImg" src={itemImg} alt={name} />
         <div className="itemDetailInfo">
           <h2 className="itemDetailName">{name}</h2>
           <h2 className="itemDetailPrice">${price.toLocaleString('es-AR')}</h2>
