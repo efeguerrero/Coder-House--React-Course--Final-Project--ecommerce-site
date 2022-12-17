@@ -9,6 +9,7 @@ import Category from '../views/Category';
 import Item from '../views/Item';
 import Cart from '../views/Cart';
 import NotFound from '../views/NotFound';
+import CheckOut from '../views/CheckOut';
 
 //Routes definition
 //Category and Item will have dynamic URL to later show specific info with useParams Hook
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
       {
         path: '/cart',
         element: <Cart />,
+      },
+      {
+        path: '/checkout',
+        element: <CheckOut />,
       },
     ],
   },
