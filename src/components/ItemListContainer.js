@@ -4,42 +4,15 @@ import React, { useState, useEffect } from 'react';
 import ItemList from './ItemList';
 import Loading from './Loading';
 
-//Product Catalog Import
-import { items } from '../mocks/item.mock';
-
-//React-Router Imports
-import { useParams } from 'react-router-dom';
+//Import Custom Hook
+import useGetCollection from '../hooks/useGetCollection';
 
 const ItemListContainer = () => {
-  const { category } = useParams();
-  const [products, setProducts] = useState();
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    new Promise((resolve) =>
-      setTimeout(() => {
-        resolve(items);
-      }, 2000)
-    )
-      .then((data) => {
-        if (category === 'todo' || !category) {
-          setProducts(data);
-        } else {
-          const filteredData = data.filter(
-            (item) => item.category === category
-          );
-          setProducts(filteredData);
-        }
-      })
-
-      .then(() => setIsLoading(false));
-    //CleanUp Function in useEffect so that before re-fetching products and filtering we set isLoading to true to display Loading Msg
-    return () => setIsLoading(true);
-  }, [category]);
+  const products = useGetCollection();
 
   return (
     <section className="sectionCenter">
-      {isLoading ? <Loading /> : <ItemList products={products} />}
+      {!products ? <Loading /> : <ItemList products={products} />}
     </section>
   );
 };
