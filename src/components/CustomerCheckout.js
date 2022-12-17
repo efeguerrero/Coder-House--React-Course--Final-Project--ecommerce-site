@@ -3,12 +3,20 @@ import React, { useRef } from 'react';
 //Context Imports
 import { useCartContext } from '../context/CartContex';
 
+//FireStore Imports
+import {
+  addDoc,
+  collection,
+  doc,
+  getFirestore,
+  updateDoc,
+} from 'firebase/firestore';
+
 const CustomerCheckout = () => {
   //Cart Context imports
-
   const { cart, cartTotal, clearCart } = useCartContext();
 
-  //ref definitions for uncontrolled inputs to obtain value from Form inputs
+  //ref definitions for uncontrolled inputs to obtain value from Form inputs to later construct order
   const refName = useRef();
   const refSurname = useRef();
   const refEmail = useRef();
@@ -18,7 +26,7 @@ const CustomerCheckout = () => {
   const handleSubmitCheckout = (e) => {
     e.preventDefault();
 
-    //Map over cart to only post order with significant information
+    //Map over cart to only post order with significant information from products
     const orderItems = cart.map((item) => {
       return {
         id: item.id,
@@ -35,14 +43,21 @@ const CustomerCheckout = () => {
         surname: refSurname.current.value,
         email: refEmail.current.value,
         phone: refPhone.current.value,
-        Address: refAddress.current.value,
+        address: refAddress.current.value,
       },
       items: orderItems,
       date: new Date().toString(),
       total: cartTotal(),
     };
 
-    console.log(order);
+    //Firebase Add Order to Database after submitting
+
+    const db = getFirestore();
+    const ordersCollection = collection(db, 'orders');
+
+    addDoc(ordersCollection, order)
+      .then(({ id }) => console.log(id))
+      .catch((err) => console.error({ err }));
   };
 
   return (
