@@ -1,12 +1,15 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 export const CartContext = createContext();
 //Context custom hook
 export const useCartContext = () => useContext(CartContext);
 
 const CartContextProvider = ({ children }) => {
-  //Context State
-  const [cart, setCart] = useState([]);
+  //Context State accesing local storage on initialization
+  const [cart, setCart] = useState(() => {
+    const cartStorage = localStorage.getItem('cart');
+    return cartStorage ? JSON.parse(cartStorage) : [];
+  });
 
   //Context Functiosna & Logic
   const addItem = (id, name, price, img_src, count) => {
@@ -65,6 +68,12 @@ const CartContextProvider = ({ children }) => {
     const count = (item && item.quantity) || 0;
     return count;
   };
+
+  //useEffect to store cart in Local Storage everytime it is updated
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
 
   return (
     <CartContext.Provider

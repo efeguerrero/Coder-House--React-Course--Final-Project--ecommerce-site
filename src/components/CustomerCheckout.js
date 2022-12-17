@@ -61,24 +61,23 @@ const CustomerCheckout = () => {
     const db = getFirestore();
     const ordersCollection = collection(db, 'orders');
 
-    //If promise is succesfull we store our ID to later show to user, and set our OrderPosted status to true, to re render and show our final message to customer. We also clear cart
+    //If promise is succesfull we store our ID to later show to user, and set our OrderPosted status to true, to re render and show our final message to customer.
 
     addDoc(ordersCollection, order)
       .then(({ id }) => {
         setOrderId(id);
-        clearCart();
         setOrderPosted(true);
       })
       .catch((err) => console.error({ err }));
   };
 
-  //Only update firebase db stock for products AFTER our ourder has been posted to avoid false stock. We use useEffect triggered by orderPosted state to ensure that we only run this after our order posting was succesfull
+  //Only update firebase db stock for products AFTER our order has been posted to avoid false stock. We use useEffect triggered by orderPosted state to ensure that we only run this after our order posting was succesfull
 
   useEffect(() => {
     if (orderPosted) {
       const db = getFirestore();
 
-      // for each item in cart we get our current stock from firebase and then update that stock substracting the quantity in our cart for that id
+      // for each item in cart we get our current stock from firebase and then update that stock substracting the quantity in our cart for that id. We clear cart after this.
       cart.forEach((item) => {
         //create reference for each item in cart to use in getDoc and updateDoc
         const itemRef = doc(db, 'items', item.id);
@@ -87,6 +86,9 @@ const CustomerCheckout = () => {
           .then((originalStock) =>
             updateDoc(itemRef, { stock: originalStock - item.quantity })
           )
+          .then(() => {
+            clearCart();
+          })
           .catch((err) => console.error(err));
       });
     }
