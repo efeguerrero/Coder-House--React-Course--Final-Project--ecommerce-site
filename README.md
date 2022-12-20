@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Coder-House React Course E-Commerce Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+E-commerce site done as the final project for the React Course in Coder-House in 2022.
 
-## Available Scripts
+# What did I use?
 
-In the project directory, you can run:
+- React
+- React-Router V6.4 library
+- HTML5/CSS3
+- Javascript
+- Firebase/Firestore Database (As a database for product catalogue and also to post orders and manage stock)
 
-### `npm start`
+# User Functionality
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Site is 100% responsive
+- Navigate through our product list and filter by category
+- View product detail, images, info and stock by clicking on each product and accesing its detail page
+- Add or remove products to cart.
+- Check Cart from anywhere on the site to view current items added, remove items and see your total amount.
+- Cart is persistent through out sessions
+- CheckOut form to fill your personal information and receive your Order ID (Generated through firebase)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Developer/Administrator Functionality
 
-### `npm test`
+- Product catalogue fetched from FireStore Database
+- Images stored and fetched from Firebase Storage
+- Confirmed orders by customers are added to Firebase under "Oders" Collecion with all the necesarry information to process (Buyer personal information , Items and quantities bought, date and order total amount)
+- After orders are added to firestore database, each product stock is updated to reflect last sale.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Para ver el proyecto:
 
-### `npm run build`
+[![App](https://img.shields.io/badge/App-informational?style=for-the-badge&logo=netlify&logoColor=fff&color=23272d)](https://changas-store-react.netlify.app)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Para ver demo del proyecto:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+https://loom.com/share/628b81d06ee646f09e7dbe1f5bf7ba67
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Para poder clonar y usar el proyecto
 
-### `npm run eject`
+### Seguir los siguientes pasos:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Clonar el repositorio de GitHub:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  ```bash
+  git clone https://github.com/rediberry/Coderhouse-ReactJS-final-project-Shopping-cart.git
+  ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- cd dentro del directorio de la carpeta:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  ```bash
+  cd Coderhouse-ReactJS-final-project-Shopping-cart
+  ```
 
-## Learn More
+- Instala las dependencias.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  ```bash
+  npm install
+  ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Para correr el proyecto:
 
-### Code Splitting
+  ```bash
+  npm run dev
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# PS:
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Stefanos Deco is a real project! You can check it out at @stefanosdeco in instagram.

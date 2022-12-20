@@ -15,12 +15,12 @@ import CartContextProvider from './context/CartContex';
 import { initializeApp } from 'firebase/app';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyA4jmWxE2W-sigYCtB3d1PTn8c605FSMEQ',
-  authDomain: 'stefanos-deco.firebaseapp.com',
-  projectId: 'stefanos-deco',
-  storageBucket: 'stefanos-deco.appspot.com',
-  messagingSenderId: '343205204965',
-  appId: '1:343205204965:web:04a8b759066ea7de85150c',
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 };
 
 initializeApp(firebaseConfig);
