@@ -27,7 +27,7 @@ E-commerce site done as the final project for the React Course in Coder-House in
 - Confirmed orders by customers are added to Firebase under "Oders" Collecion with all the necesarry information to process (Buyer personal information , Items and quantities bought, date and order total amount)
 - After orders are added to firestore database, each product stock is updated to reflect last sale.
 
-## Para ver el proyecto:
+## To See Project
 
 [![App](https://img.shields.io/badge/App-informational?style=for-the-badge&logo=netlify&logoColor=fff&color=23272d)](https://changas-store-react.netlify.app)
 
