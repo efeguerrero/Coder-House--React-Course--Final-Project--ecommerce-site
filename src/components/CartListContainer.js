@@ -20,10 +20,10 @@ const CartListContainer = () => {
             removeItem={removeItem}
           />
         ))}
+        <button className="clearCartBtn" onClick={() => clearCart()}>
+          Limpiar Carrito
+        </button>
       </div>
-      <button className="clearCartBtn" onClick={() => clearCart()}>
-        Limpiar Carrito
-      </button>
     </>
   );
 };
