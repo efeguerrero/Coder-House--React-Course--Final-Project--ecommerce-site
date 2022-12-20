@@ -6,8 +6,8 @@ import mainLogo from '../assets/logos/logostefanos.png';
 //React-Router Imports
 import { NavLink } from 'react-router-dom';
 
-//Product Catalog Import
-import { items } from '../mocks/item.mock';
+//Import product Categories constants from utils
+import { productCategories } from '../utils/productCategories';
 
 const NavBar = () => {
   const refFilterContainer = useRef(null);
@@ -18,11 +18,10 @@ const NavBar = () => {
     refMenuIcon.current.classList.toggle('navbarMenuIcon-active');
   };
 
-  //Obtain unique categories from product data set to later map over and render
+  //Obtain unique categories from utils/productCategories to map over and render
 
-  const categoriesArr = items.map((item) => item.category);
-  const indivCategories = new Set(categoriesArr);
-  const categories = ['todo', ...indivCategories];
+  const categoriesArr = productCategories.map((item) => item.category);
+  const categories = ['todo', ...categoriesArr];
 
   return (
     <nav className="navbar">
@@ -38,10 +37,11 @@ const NavBar = () => {
       </NavLink>
       {/* NavBar Menu Links */}
       <ul className="navbarFilterContainer" ref={refFilterContainer}>
-        {categories.map((category) => {
+        {categories.map((category, index) => {
           return (
             <NavLink
               to={`/category/${category}`}
+              key={index}
               className={({ isActive }) => (isActive ? 'activeLink' : '')}
             >
               <li className="navbarFilterItem" onClick={handleMenuClick}>

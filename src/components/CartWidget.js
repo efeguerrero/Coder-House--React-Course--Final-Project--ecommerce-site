@@ -13,7 +13,7 @@ function CartWidget() {
   return (
     <Link to="/Cart">
       <div className="navBarCart">
-        {/* We only show item total count in widget if we have any */}
+        {/* We only show item total count in widget if we have any. Icon is always shown to allow navegation to cart, even if empty */}
         {cartTotalItems() > 0 ? (
           <div className="cartWidgetItemCount">{cartTotalItems()}</div>
         ) : (

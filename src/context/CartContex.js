@@ -11,9 +11,9 @@ const CartContextProvider = ({ children }) => {
     return cartStorage ? JSON.parse(cartStorage) : [];
   });
 
-  //Context Functiosna & Logic
+  //Context Functions & Logic
   const addItem = (id, name, price, img_src, count) => {
-    //If item is in cart we map over Array and update quantity of item that was updated, leaving the rest as they were. If not in cart then we added it to the end of the array
+    //If item is in cart (not empty) we map over Array and update quantity of item that was updated, leaving the rest as they were. If not in cart then we added it to the end of the array
     if (isInCart(id)) {
       const updatedCart = cart.map((item) => {
         if (item.id === id) {

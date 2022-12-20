@@ -12,6 +12,7 @@ const CartListContainer = () => {
   return (
     <>
       <div className="cartListContainer">
+        {/* In this cart mapping we dont check for length to avoid mapping an empty array because we already validated if our cart was empty in CartContainer.js */}
         {cart.map((cartItem) => (
           <CartItem
             key={cartItem.id}

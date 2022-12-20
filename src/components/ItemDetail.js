@@ -18,7 +18,7 @@ const ItemDetail = ({ item }) => {
   const itemImg = useGetItemImg(img_src);
 
   //Context Imports
-  const { addItem, cartItemCount } = useCartContext();
+  const { addItem, cartItemCount, isInCart } = useCartContext();
 
   //Component States
   const [count, setCount] = useState(1);
@@ -44,8 +44,8 @@ const ItemDetail = ({ item }) => {
   const handleCartAdd = (id, name, price, img_src, count) => {
     const newStock = currStock - count;
     setCurrStock(newStock);
-    setCount(1);
     addItem(id, name, price, img_src, count);
+    setCount(1);
   };
 
   const handleCheckOut = () => {
@@ -73,7 +73,11 @@ const ItemDetail = ({ item }) => {
             >
               {currStock === 0 ? 'Sin Stock' : 'Agregar al carrito'}
             </button>
-            <button className="toCartBtn" onClick={handleCheckOut}>
+            <button
+              disabled={!isInCart(id)}
+              className={!isInCart(id) ? 'inactiveToCartBtn' : 'toCartBtn'}
+              onClick={handleCheckOut}
+            >
               ir al carrito
             </button>
           </div>

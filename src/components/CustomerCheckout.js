@@ -32,7 +32,7 @@ const CustomerCheckout = () => {
   const handleSubmitCheckout = (e) => {
     e.preventDefault();
 
-    //Map over cart to only post order with significant information from products
+    //Map over cart to only post order with significant information from products. No need to check length of cart because you only arrive here if you had items in cart.
     const orderItems = cart.map((item) => {
       return {
         id: item.id,

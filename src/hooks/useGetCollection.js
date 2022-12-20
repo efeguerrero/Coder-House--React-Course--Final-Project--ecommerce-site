@@ -19,7 +19,7 @@ const useGetCollection = () => {
 
   const db = getFirestore();
 
-  //We must only execute this useEffect on initial rendering to avoid an endless loop of re-rendering of useGetCollection component caused by setProducts triggering it
+  //We must only execute this useEffect on initial rendering and when category param changes to avoid an endless loop of re-rendering of useGetCollection component caused by setProducts triggering it
 
   useEffect(() => {
     //No filter Query to bring all products if no category is selected or "todo"
