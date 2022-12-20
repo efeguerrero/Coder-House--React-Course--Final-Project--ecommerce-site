@@ -891,6 +891,7 @@ a {
 .cartItemInfo {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 
 .cartItemName {
@@ -946,7 +947,8 @@ a {
   margin: 2rem 0;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80vw;
+  max-width: 450px;
 }
 
 .cartSummaryTitle {
@@ -995,6 +997,64 @@ a {
   border: 1px solid var(--btnMainBack);
 }
 
+/***********Cart Media Queries*********/
+
+@media screen and (min-width: 768px) {
+  .cartSummary {
+    width: 80vw;
+    max-width: 730px;
+  }
+
+  .cartSummaryTitle {
+    font-size: 1.5rem;
+  }
+
+  .cartSummarySubtitle,
+  .cartSummaryAmount {
+    font-size: 1.2rem;
+  }
+
+  .checkoutBtn,
+  .toProductsBtn,
+  .clearCartBtn {
+    width: 50%;
+    font-size: 0.8rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .cartItemImg {
+    width: 10rem;
+    height: 10rem;
+    object-fit: contain;
+  }
+
+  .cartItemInfo {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .cartItemName {
+    font-size: 1.2rem;
+  }
+
+  .cartItemPrice {
+    font-size: 1rem;
+  }
+
+  .cartItemQuantity {
+    font-size: 1rem;
+  }
+
+  .cartItemSubtotal {
+    font-size: 1.1rem;
+  }
+
+  .cartItemRemove {
+    font-size: 0.9rem;
+  }
+}
+
 /*************************************/
 /**********EMPTY CART****************/
 /***********************************/
@@ -1026,6 +1086,18 @@ a {
   transition: var(--allTransition);
   text-align: center;
   margin: 0.6rem 0;
+}
+
+/******Empty Cart Query**********/
+
+@media screen and (min-width: 768px) {
+  .emptyCartMsg {
+    font-size: 1.8rem;
+  }
+
+  .emptyCartBackBtn {
+    font-size: 1.1rem;
+  }
 }
 
 /*************************************/
@@ -1081,6 +1153,28 @@ a {
   transition: var(--allTransition);
   text-align: center;
   margin: 0.6rem 0;
+}
+
+/*********Check Out Form Query*********/
+
+@media screen and (min-width: 768px) {
+  .checkoutForm {
+    width: 600px;
+  }
+
+  .checkoutFormAmount {
+    font-size: 1.5rem;
+  }
+
+  .checkoutInput {
+    padding: 0.6rem 0.8rem;
+    width: 80%;
+    max-width: 500px;
+  }
+
+  .checkoutInput::placeholder {
+    font-size: 1rem;
+  }
 }
 
 /*************************************/
