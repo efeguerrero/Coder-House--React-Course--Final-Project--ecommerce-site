@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const CartSummary = () => {
   const { cartTotal } = useCartContext();
 
-  const costoEnvio = 300;
+  const costoEnvio = 0;
 
   return (
     <>
