@@ -97,8 +97,13 @@ const CustomerCheckout = () => {
   if (orderPosted) {
     return (
       <section className="sectionCenter">
-        <h2 className="checkoutOrderTitle">¡Gracias por su compra!</h2>
-        <h3 className="checkoutOrderId">Numero de Orden: {orderId}</h3>
+        <div className="checkoutOrderContainer">
+          <h2 className="checkoutOrderTitle">¡Gracias por su compra!</h2>
+          <h2 className="checkoutOrderInfo">
+            Conserve su número de orden para seguir su pedido.
+          </h2>
+          <h3 className="checkoutOrderId">Numero de Orden: {orderId}</h3>
+        </div>
       </section>
     );
   }
@@ -108,7 +113,9 @@ const CustomerCheckout = () => {
       <form action="" className="checkoutForm" onSubmit={handleSubmitCheckout}>
         <h2 className="checkoutFormAmount">
           El monto total de su compra es de: $
-          {cartTotal().toLocaleString('es-AR')}
+          <span className="checkoutFormAmountStrong">
+            {cartTotal().toLocaleString('es-AR')}
+          </span>
         </h2>
         <input
           type="text"

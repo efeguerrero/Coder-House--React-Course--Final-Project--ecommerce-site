@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 //FireStore Imports
-import { doc, getFirestore, query, where, getDoc } from 'firebase/firestore';
+import { doc, getFirestore, getDoc } from 'firebase/firestore';
 
 //React-Router Imports
 import { useParams } from 'react-router-dom';

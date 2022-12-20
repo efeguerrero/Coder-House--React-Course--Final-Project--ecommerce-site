@@ -27,7 +27,9 @@ const useGetCollection = () => {
       //create collection ref
       const itemsCollection = collection(db, 'items');
       getDocs(itemsCollection).then((data) =>
-        setProducts(data.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
+        setProducts(
+          data.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+        ).catch((err) => console.error({ err }))
       );
     } else {
       //filterd query by category if it was seleceted
@@ -36,7 +38,11 @@ const useGetCollection = () => {
         where('category', '==', category)
       );
       getDocs(itemsQuery).then((data) =>
-        setProducts(data.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
+        setProducts(
+          data.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+        ).catch((err) => {
+          console.error({ err });
+        })
       );
     }
   }, [category]);

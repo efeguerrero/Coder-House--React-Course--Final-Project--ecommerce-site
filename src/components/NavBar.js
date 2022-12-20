@@ -18,7 +18,7 @@ const NavBar = () => {
     refMenuIcon.current.classList.toggle('navbarMenuIcon-active');
   };
 
-  //Obtain unique categories from utils/productCategories to map over and render
+  //Obtain unique categories from utils/productCategories to map over and render. No need to check length of array before mapping since it is based on a constant js file with data
 
   const categoriesArr = productCategories.map((item) => item.category);
   const categories = ['todo', ...categoriesArr];

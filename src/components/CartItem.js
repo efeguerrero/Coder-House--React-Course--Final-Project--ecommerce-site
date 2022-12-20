@@ -1,9 +1,5 @@
 import React from 'react';
 
-//Assets Import
-import cartAdd from '../assets/icons/cartAdd.svg';
-import cartRemove from '../assets/icons/cartRemove.svg';
-
 //Custom Hook import to access Firebase Image Storage
 import useGetItemImg from '../hooks/useGetItemImg';
 
@@ -21,15 +17,6 @@ const CartItem = ({ cartItem, removeItem }) => {
         <div className="cartItemCount">
           <h3 className="cartItemQuantity">Unidades: {quantity}</h3>
         </div>
-        {/* <div className="cartItemCount">
-          <button className="cartItemBtn">
-            <img src={cartRemove} alt="" className="cartItemBtnRemoveIcon" />
-          </button>
-          <h3 className="cartItemQuantity">{quantity}</h3>
-          <button className="cartItemBtn">
-            <img src={cartAdd} alt="" className="cartItemBtnAddIcon" />
-          </button>
-        </div> */}
         <h3 className="cartItemSubtotal">
           <span className="cartItemSubtotalStrong"> Subtotal:</span> $
           {(price * quantity).toLocaleString('es-AR')}
