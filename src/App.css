@@ -684,7 +684,7 @@ a {
   .itemDetailStock,
   .itemDetailId,
   .itemDetailCategory,
-  .itemsInCar {
+  .itemsInCart {
     font-size: 1rem;
     display: grid;
     grid-template-columns: 250px 1fr;
@@ -1081,6 +1081,25 @@ a {
 
   .clearCartBtn {
     margin: 1rem 0;
+  }
+
+  .checkoutBtn:hover {
+    background-color: var(--btnAltHoverBack);
+    border: 1px solid var(--btnAltHoverBorder);
+    transition: var(--allTransition);
+  }
+
+  .toProductsBtn:hover {
+    background-color: var(--btnHoverBack);
+    color: var(--btnHoverText);
+    border: 1px solid var(--btnHoverBorder);
+    transition: var(--allTransition);
+  }
+
+  .clearCartBtn:hover {
+    background-color: var(--btnMainBack);
+    color: var(--btnMainText);
+    transition: var(--allTransition);
   }
 }
 
