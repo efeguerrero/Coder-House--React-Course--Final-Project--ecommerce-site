@@ -29,7 +29,7 @@ E-commerce site done as the final project for the React Course in Coder-House in
 
 ## To See Project
 
-[![App](https://img.shields.io/badge/App-informational?style=for-the-badge&logo=netlify&logoColor=fff&color=23272d)](https://stefanosdeco-coderh.netlify.app)
+[![App](https://img.shields.io/badge/App-informational?style=for-the-badge&logo=netlify&logoColor=fff&color=23272d)](https://ecomm-coderh.netlify.app/)
 
 ## To See a Demo of the project
 
